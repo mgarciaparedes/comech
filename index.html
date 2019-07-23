@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>COMECH SPA</title>
+  <link rel="icon" type="image/png" href="img/icon.png" />
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Slick slider -->
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+  <style type="text/css">
+    @font-face {
+      font-family: "Coolvetica";
+      src: url("fonts/coolvetica.ttf");
+      }
+
+      @font-face {
+      font-family: "Bebas";
+      src: url("fonts/BebasNeue-Regular.ttf");
+      }
+
+      @font-face {
+      font-family: "Radiant";
+      src: url("fonts/Radiant.ttf");
+      }
+
+      @font-face {
+      font-family: "Boshela";
+      src: url("fonts/Boshela.ttf");
+      }
+
+      @font-face {
+      font-family: "Lastwinter";
+      src: url("fonts/Lastwinter.ttf");
+      }
+
+      .coolvetica{
+        font-family:'Coolvetica';
+      }
+
+      .slantedDivA{
+      position: relative;
+      width: 100%;
+      height: auto;
+      
+      box-sizing: border-box;
+      /*color: #fff;*/
+      margin-bottom: 5px;
+      padding-bottom: 100px;
+    }
+
+    .slantedDivB{
+      position: relative;
+      width: 100%;
+      height: auto;
+      background: rgba(40, 40, 40, 1);
+      box-sizing: border-box;
+      color: #fff;
+      /*margin-bottom: 10px;*/
+      padding-bottom: 100px;
+      
+    }
+
+    .slantedDivA:after{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: '';
+      background: inherit;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform-origin: top left;
+      transform: skewY(4deg);
+    }
+
+    .slantedDivB:after{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: '';
+      background: inherit;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform-origin: top left;
+      transform: skewY(-4deg);
+    }
+
+    #card:hover, #card:hover h4{
+      background-color:#1F53A3;
+      color:white;
+
+    }
+
+       .diagonal-card{
+      position: relative;
+      width: 100%;
+      height: auto;
+      background-color: #82b1ff;
+      box-sizing: border-box;
+      color: #133E80;
+      transition: transform .2s;
+      border-radius: 10px;
+      padding:15px;
+
+    }
+
+        .diagonal-card:after{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: '';
+      background: inherit;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform-origin: top left;
+      transform: skewY(4deg);
+    }
+
+
+    .diagonal-card:hover{
+      background-color:white;
+      color:black;
+      transform: scale(1.1);
+    }
+
+    .diagonal-card:hover i{
+      color:#133E80;
+    }
+
+    .zoom-hover{
+      transition: transform .2s;
+    }
+
+    .zoom-hover:hover{
+      transform: scale(1.1);
+    }
+
+    .zoom-hover2{
+      transition: transform .2s;
+    }
+
+    .zoom-hover2 i{
+      color:#1F53A3;
+    }
+
+    .zoom-hover2:hover{
+      transform: scale(1.1);
+      color:white;
+      background-color:#1F53A3;
+
+    }
+
+    .zoom-hover2:hover i{
+      color:#82b1ff;
+    }
+
+    .boton{
+      color: #0E274D;
+      font-style: none;
+      font-family: 'Coolvetica';
+      font-size: 20px;
+      border:2px solid #0E274D;
+      padding:10px;
+    }
+
+    .boton:hover{
+      color:black;
+      background-color:#0E274D;
+      padding:10px;
+      color: white;
+    }
+
+    a.modal-trigger{
+      color:black;
+    }
+
+    a.modal-trigger:hover{
+      color:#1F53A3;
+    }
+
+    hr{
+      border:3px solid #0E274D;
+    }
+
+    .justify{
+      text-align:justify;
+    }
+
+  </style>
+</head>
+<body>
+  <nav id="nav1" role="navigation white-text" style="background-color:#1F53A3;font-family: 'Coolvetica'";>
+    <div class="nav-wrapper" style="padding-right:5%;padding-left:5%">
+      <a id="logo-container" href="#" class="brand-logo">
+        <img src="img/Telefono-SAC.png" style="width:8em;">
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="abarrotes.html">Abarrotes</a></li>
+        <li><a href="confites.html">Confites</a></li>
+        <li><a href="impulsamos.html">IMPULSAMOS TU NEGOCIO</a></li>
+      </ul>
+
+      <!--<ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
+    </div>
+  </nav>
+
+  <nav id="nav2" class="white" role="navigation" style="font-family: 'Coolvetica';margin-bottom:0px;">
+    <div class="nav-wrapper" style="padding-right:5%;padding-left:5%">
+      <a id="logo-container" href="#">
+        <img class="hide-on-med-and-down" src="img/logo.png" style="width:17em;z-index:1;position:relative">
+        <img class="hide-on-large-only brand-logo" src="img/logo.png" style="width:5em">
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="" href="#index-banner">Inicio</a></li>
+        <li><a class="" href="#conocenos">Conócenos</a></li>
+        <li><a class="" href="#contacto">Contacto</a></li>
+        <li><a class="" href="#comunas">Comunas</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav" style="background-color:#D4E6F1;color:white;">
+        <li><a href="#index-banner">Inicio</a></li>
+        <li><a href="#conocenos">Conócenos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#comunas">Comunas</a></li>
+        <li><a href="abarrotes.html">Abarrotes</a></li>
+        <li><a href="confites.html">Confites</a></li>
+        <li><a href="impulsamos.html">IMPULSAMOS TU NEGOCIO</a></li>
+      </ul>
+      <a href="#" style="color:#1F53A3" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  
+    <div class="section scrollspy" id="index-banner">
+      <div class="container-fluid" style="padding-top:30px;/*height:400px;*/">
+        <div class="row">
+          <div class="col m12 s12 l6">
+
+          <h3 class="light center" style="font-family: 'Coolvetica';" data-aos="zoom-in">Impulsa las ventas de tu negocio junto a nosotros</h3>
+
+          <hr style="width:5%;border:5px solid #82b1ff">
+
+          <p class="justify" data-aos="zoom-in" data-aos-delay="400"><b style="font-family:'Boshela';font-size:30px;padding-right:1px;">B</b>ienvenido a COMECH, Comercializadora comprometida a la venta, asesoría y distribución de Abarrotes y Confites NESTLÉ&copy; a toda la zona oriente de la Región Metropolitana. Con más de 8 años en el mercado, te ofrecemos un servicio de garantías que cubran tus necesidades y cree oportunidades, asistiéndote así en el prospero desarrollo de tu emprendimiento. <b>¡VEN Y COMPRA CON NOSOTROS!</b></p>
+
+        </div>
+
+        <div class="col m12 s12 l1">
+          
+        </div>
+
+        <div class="col m12 s12 l5" style="font-family: 'Coolvetica';">
+          <h4 data-aos="flip-down" data-aos-delay="800" data-aos-duration="600"><img style="width:45px;" src="img/check.png"> <a class="modal-trigger tooltipped" href="#modal1" data-position="top" data-tooltip="<i class='fas fa-search-plus'></i> Click para ver más">Vendedores en Terreno</a></h4>
+          <h4 data-aos="flip-down" data-aos-delay="1000" data-aos-duration="600"><img style="width:45px;" src="img/check.png"> <a class="modal-trigger tooltipped" href="#modal2" data-position="top" data-tooltip="<i class='fas fa-search-plus'></i> Click para ver más">Asesorías Especializadas</a></h4>
+          <h4 data-aos="flip-down" data-aos-delay="1200" data-aos-duration="600"><img style="width:45px;" src="img/check.png"> <a class="modal-trigger tooltipped" href="#modal3" data-position="top" data-tooltip="<i class='fas fa-search-plus'></i> Click para ver más">Servicio al Cliente</a></h4>
+          <h4 data-aos="flip-down" data-aos-delay="1400" data-aos-duration="600"><img style="width:45px;" src="img/check.png"> <a class="modal-trigger tooltipped" href="#modal4" data-position="top" data-tooltip="<i class='fas fa-search-plus'></i> Click para ver más">Atención a 14 comunas</a></h4>
+          <h4 data-aos="flip-down" data-aos-delay="1600" data-aos-duration="600"><img style="width:45px;" src="img/check.png"> <a class="modal-trigger tooltipped" href="#modal5" data-position="top" data-tooltip="<i class='fas fa-search-plus'></i> Click para ver más">Despacho Gratis</a></h4>
+        </div>
+      </div>
+
+
+        <div class="row">
+          <div class="col s12 m12 l12 center">
+            <img src="img/productos.png" style="width:100%;">
+            <br><br>
+            <a class="boton waves-effect" href="#conocenos">Ver más <i class="fas fa-plus"></i></a>
+          </div>
+        </div>
+
+      
+  </div>
+</div>
+
+
+    <div class="section scrollspy slantedDivA" id="conocenos" style="background-color:#1F53A3;">
+      <div class="container">
+      <!--   Icon Section   -->
+      <div class="row" style="padding-top:30px;padding-bottom:50px;">
+        <div class="col s12 m12 l12 center">
+          <img src="img/comech.png" style="width:30%">
+          <br><br>
+          <hr style="width:5%;border:5px solid white">
+        </div>
+      </div>
+
+
+      <div class="row black-text">
+
+        <!--<div class="col s12 m12 l12">
+          <p class="white-text"></p>
+        </div>-->
+
+        <div class="col s12 m4" data-aos="zoom-in">
+          <div class="icon-block">
+            <div class="diagonal-card">
+              
+                <h2 class="center white-text"><i class="material-icons">domain</i></h2>
+                  <h5 class="center coolvetica">Descúbrenos</h5>
+
+                  <p class="light justify">Somos una organización con un alto grado de vocación y compromiso hacia nuestros clientes. Nuestros 8 años en el mercado nos avalan como la mejor opción al momento de abastecer tu surtido de abarrotes y confites, con la mayor calidad, rápida entrega y menor costo.</p>
+             
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon-block">
+            <div class="diagonal-card">
+              <h2 class="center white-text"><i class="material-icons">group</i></h2>
+                <h5 class="center coolvetica">Nuestro Servicio</h5>
+
+                <p class="light justify">Tenemos la intención de que no te muevas de tu negocio, por eso te ofecemos una completa asistencia de nuestros vendedores, que te visitarán para que puedas realizar tu pedido y sea despachado en tu establecimiento, aumentando la productividad de tu tiempo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m4" data-aos="zoom-in" data-aos-delay="400">
+          <div class="icon-block">
+            <div class="diagonal-card">
+              <h2 class="center white-text"><i class="material-icons">equalizer</i></h2>
+            <h5 class="center coolvetica">Verte crecer</h5>
+
+                <p class="light justify">Queremos transmitir nuestros tips y experiencias para que puedas ver surgir tus ideas. En COMECH nos especializamos en asesorarte acerca de las competencias actuales del mercado y como sacar ventaja de tu ubicación, espacio, disposición y atención al cliente.</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center" style="text-align: right;">
+          <img src="img/logo_comech_camion.png" class="hide-on-med-and-down">
+        </div>
+      </div>
+    </div>
+    
+
+  <div class="section">
+    <div class="container">
+
+      <div class="row">
+        <div class="col s12 m12 l12">
+  
+          <h3 class="center" style="font-family: 'Coolvetica';">Tu negocio es nuestro compromiso</h3>
+            
+          <hr style="width:5%;border:5px solid #82b1ff">
+
+          <p data-aos="zoom-in" data-aos-duration="500" style="text-align: justify;"><sup><i class="fas fa-quote-left fa-lg" style="color:grey;"></i></sup> <b>La premisa de nuestro trabajo es facilitar el tuyo.</b> COMECH es una organización con una alta vocación de servicio siguiendo todos un mismo objetivo: la satisfacción de nuestros clientes. Para ello, contamos con un equipo siguiendo los mismos lineamientos; desde los vendedores en terreno hasta nuestro servicio de transporte, pasando por los pickers, ingenieros de logística, departamento de recursos humanos, departamento de informática, departamento de administración y gerencia general, <b>nos encontramos en la tarea de impulsar tu negocio.</b> <sup><i class="fas fa-quote-right fa-lg" style="color:grey;"></i></sup></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center" style="text-align: right;">
+          <img src="img/isotipo-login.png" class="hide-on-med-and-down">
+        </div>
+      </div>
+    </div>
+
+
+  <div class="slantedDivB scrollspy">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          
+          <div class="col s12 m12 l12">
+            <h3 style="font-family: 'Coolvetica';">En COMECH trabajamos para ti</h3>
+            
+          <hr style="width:5%;border:5px solid #82b1ff">
+          </div>
+
+          <div class="col s12 m12 l4" data-aos="zoom-in">
+            <div class="zoom-hover">
+              <h1 class="header">8.000 <b style="color:#82b1ff;">+</b></h1>
+              <h5 class="light">Clientes</h5>
+            </div>
+          </div>
+          <div class="col s12 m12 l4 zoom-hover" data-aos="zoom-in">
+            <div class="zoom-hover">
+              <h1 class="header">99,9 <b style="color:#82b1ff;">%</b></h1>
+              <h5 class="light">Efectividad en entrega</h5>
+            </div>
+          </div>
+          <div class="col s12 m12 l4 zoom-hover" data-aos="zoom-in">
+            <div class="zoom-hover">
+            <h1 class="header">70 <b style="color:#82b1ff;">+</b></h1>
+            <h5 class="light">Productos</h5>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section" style="background-color: white;padding-bottom:100px;">
+    <div class="container">
+
+      <div class="row center" style="padding-bottom:30px;">
+        <div class="col s12 m12 l12">
+          
+              <h3 style="font-family: 'Coolvetica';">Nos adecuamos a tus necesidades</h3>
+              <hr style="width:5%;border:5px solid #1F53A3">
+           
+        </div>
+      </div>
+
+
+      <div class="row" data-aos="zoom-in" data-aos-duration="500">
+        <div class="col s6 m6 l3 center zoom-hover2">
+          <br>
+          <i class="fas fa-list-ol fa-4x"></i>
+          <h5 class="header">Venta<br>Personalizada</h5>
+          <h6 class="light">Haz el pedido a tu gusto</h6>
+        </div>
+
+        <div class="col s6 m6 l3 center zoom-hover2">
+          <br>
+          <i class="far fa-clock fa-4x"></i>
+         <h5 class="header">Despacho<br>24/7</h5>
+          <h6 class="light">En comuna de Providencia</h6>
+        </div>
+
+        <div class="col s6 m6 l3 center zoom-hover2">
+          <br>
+          <i class="fas fa-cookie fa-4x"></i>
+          <i class="fas fa-coffee fa-4x hide-on-med-and-down"></i>
+          <h5 class="header">Amplio<br>Surtido</h5>
+          <h6 class="light">En Abarrotes y Confites</h6>
+        </div>
+
+        <div class="col s6 m6 l3 center zoom-hover2">
+          <br>
+          <i class="fas fa-hand-holding-usd fa-4x"></i>
+          <h5 class="header">Sin Monto<br>Mínimo</h5>
+          <h6 class="light">Pedidos desde <b><br>$ 1</b></h6>
+        </div>
+      
+      
+        <div class="col s6 m6 l3 center zoom-hover2">
+          <br>
+          <i class="fas fa-boxes fa-4x"></i>
+         <h5 class="header">Compra por<br>unidades</h5>
+          <h6 class="light">Sin mínimo de compra</h6>
+        </div>
+
+        <div class="col s6 m6 l3 center zoom-hover2">
+          <br>
+          <i class="fas fa-chalkboard-teacher fa-4x"></i>
+         <h5 class="header">Acciones<br>Promocionales</h5>
+          <h6 class="light">Tips y Marketing</h6>
+        </div>
+
+        <div class="col s6 m6 l3 center zoom-hover2">
+          <br>
+          <i class="fas fa-receipt fa-4x"></i>
+         <h5 class="header">Material<br>Publicitario</h5>
+          <h6 class="light">Material POP y Muebles</h6>
+        </div>
+
+        <div class="col s6 m6 l3 center zoom-hover2">
+          <br>
+          <i class="fas fa-comments-dollar fa-4x"></i>
+         <h5 class="header">Apoyo en<br>Ejecución</h5>
+          <h6 class="light">Estrategias de Ventas</h6>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="section scrollspy" style="background-color: #1F53A3;" id="contacto">
+    <div class="container">
+
+      <div class="row">
+        <div class="col s12 m12 l12 white-text center">
+          <h3 class="header" style="font-family: 'Coolvetica'">¿Listo para impulsar tu negocio?</h3>
+          <hr style="width:5%;border:5px solid white">
+          <h5 class="light">Llámanos o escríbenos y nuestros ejecutivos te brindarán la atención que necesitas.</h5>
+        </div>
+      </div>
+
+      <div class="row center white-text" data-aos="zoom-in">
+        <div class="col s12 m12 l4">
+          <div class="icon-block zoom-hover">
+          <h1><i class="material-icons">local_post_office</i></h1>
+          <h4  style="font-family: 'Coolvetica';letter-spacing: 2px;">Email</h4>
+          <p style="letter-spacing: 1px;width:100%;">serviciocliente@comech.cl</p>
+          </div>
+        </div>
+        <div class="col s12 m12 l4">
+          <div class="icon-block zoom-hover">
+          <h1><i class="material-icons">call</i></h1>
+          <h4  style="font-family: 'Coolvetica';letter-spacing: 2px;">Fono</h4>
+          <h5 style="letter-spacing: 2px;width:100%;font-family:'Coolvetica'">+56 (2) 2434 7272</h5>
+          </div>
+        </div>
+        <div class="col s12 m12 l4">
+          <div class="icon-block zoom-hover">
+          <h1><i class="material-icons">headset_mic</i></h1>
+          <h4  style="font-family: 'Coolvetica';letter-spacing: 2px;">SAC</h4>
+          <h5 style="letter-spacing: 2px;width:100%;font-family:'Coolvetica'">+56 (2) 2434 7273</h5>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+  <div class="section scrollspy" id="comunas">
+    <div class="container">
+
+      <div class="row">
+        <div class="col s12 m12 l12 center">
+          <h3 style="font-family: 'Coolvetica';">Comunas que atendemos</h3>
+              <hr style="width:5%;border:5px solid #1F53A3">
+        </div>
+        </div>
+
+        <div class="row" data-aos="zoom-in">
+          <div class="col s12 m12 l1"></div>
+          <div class="col s7 m12 l6">
+            <img style="width:100%;" src="img/cobertura_almacen5.png">
+          </div>
+          
+          <div class="col s1 m12 l1"></div>
+          <div class="col s4 m12 l3">
+            
+              <i class='fas fa-map-marker-alt' style='color:#E02C44'></i> <b>Conchalí</b><br>
+              <i class='fas fa-map-marker-alt' style='color:#E02C44'></i> <b>Huechuraba</b><br>
+              <i class='fas fa-map-marker-alt' style='color:#E02C44'></i> <b>La Florida</b><br>
+              <i class='fas fa-map-marker-alt' style='color:#E02C44'></i> <b>La Reina</b><br>
+              <i class='fas fa-map-marker-alt' style='color:#E02C44'></i> <b>Las Condes</b><br>
+              <i class='fas fa-map-marker-alt' style='color:#E02C44'></i> <b>Lo Barnechea</b><br>
+              <i class='fas fa-map-marker-alt' style='color:#E02C44'></i> <b>Macul</b><br>
+              <i class='fas fa-map-marker-alt' style='color:#E02C44'></i> <b>Ñuñoa</b><br>
+              <i class='fas fa-map-marker-alt' style='color:#E02C44'></i> <b>Peñalolén</b><br>
+              <i class='fas fa-map-marker-alt' style='color:#E02C44'></i> <b>Providencia</b><br>
+              <i class='fas fa-map-marker-alt' style='color:#E02C44'></i> <b>Recoleta</b><br>
+              <i class='fas fa-map-marker-alt' style='color:#E02C44'></i> <b>San Joaquín</b><br>
+              <i class='fas fa-map-marker-alt' style='color:#E02C44'></i> <b>San Miguel</b><br>
+              <i class='fas fa-map-marker-alt' style='color:#E02C44'></i> <b>Vitacura</b><br>
+              
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+
+
+
+  <footer class="page-footer" style="background-color:#0E274D;font-family:'Coolvetica';letter-spacing: 1px;">
+    <div class="container">
+      <div class="row">
+        <div class="col l8 s12">
+          <ul>
+            <li><img src="img/comech.png" style="width:40%"></li>
+            <li><br></li>
+            <li>Comercializadora de Abarrotes y Confites</li>
+            <li><i style="color:#B91235;" class="fas fa-map-marker-alt"></i> Av. Carretera General San Martín 8000, Quilicura, Región Metropolitana.</li>
+            <li>Teléfonos: 2 2434 7272 - 2 2434 7273</li>
+          </ul>
+
+
+        </div>
+        <div class="col l2 s6">
+          <h5 class="white-text">Web</h5>
+          <ul>
+            <li><a class="white-text" href="#index-banner">Inicio</a></li>
+            <li><a class="white-text" href="#conocenos">Conócenos</a></li>
+            <li><a class="white-text" href="#contacto">Contacto</a></li>
+            <li><a class="white-text" href="#comunas">Comunas</a></li>
+          </ul>
+        </div>
+        <div class="col l2 s6">
+          <h5 class="white-text">Comercio</h5>
+          <ul>
+            <li><a class="white-text" href="abarrotes.html">Abarrotes</a></li>
+            <li><a class="white-text" href="confites.html">Confites</a></li>
+            <li><a class="white-text" href="impulsamos.html">Impulsamos tu Negocio</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container right">
+      Powered by <a class="brown-text text-lighten-3" href="#">Miguel Garcia</a>
+      </div>
+    </div>
+  </footer>
+
+    <!-- boton fixed-->
+  <div class="fixed-action-btn">
+      <a id="back-to-top" class="btn-floating btn-large black scale-transition" style="opacity:0.4">
+        <i class="large material-icons">keyboard_arrow_up</i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Modal Vendedores en Terreno -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h6 class="right"><a href="#!" class="hide-on-med-and-down modal-close waves-effect waves-green boton">X</a></h6>
+      <h4 class="coolvetica center">Nuestra Fuerza de Ventas</h4>
+
+          <h6 class="light center">Tu apoyo en terreno</h6>
+          <div class="row">
+            <div class="col s4 m4 l5"><hr></div>
+          
+            <div class="col s4 m4 l2 center">
+              <i class="amber-text fas fa-star"></i>
+              <i class="amber-text fas fa-star"></i>
+              <i class="amber-text fas fa-star"></i>
+            </div>
+
+            <div class="col s4 m4 l5"><hr></div>
+
+          </div>
+      
+
+      <div class="center"><img src="img/primer-plano-mano.jpg" style="width:100%;"></div>
+      
+      <hr>
+
+      <p class="" style="text-align:justify;">&nbsp;&nbsp;&nbsp;Nuestro talento humano a tu alcance. En Comech nos preocupamos por el bienestar de tu carrito, kiosko, emprendimiento, abasto, almacén o negocio. Para ello, contamos con nuestro apoyo en terreno, un equipo distribuido por todo la zona suroriente, nororiente y oriente de la Región Metropolitana. Cada uno de ellos con la disposición de cumplir con las exigencias de las necesidades actuales del mercado.</p>
+
+      <p class="" style="text-align:justify;">&nbsp;&nbsp;&nbsp;Además, como punto a favor, no nos conformamos con venderte, lo que nos diferencia de la competencia es que ofrecemos un servicio de asesoría totalmente gratis para nuestros clientes, estrategia que comprende el uso de material de punto de compra (POP), muebles de exhibición, neurolingüistica orientada al cliente, manejo de costos y promociones, entre muchas otras.</p>
+
+    </div>
+    <div class="modal-footer" style="margin-bottom:10px;">
+      <a href="#!" class="boton modal-close waves-effect waves-green">Cerrar Ventana</a>
+    </div>
+  </div>
+
+  <!-- Modal Asesorías Especializadas -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <h6 class="right"><a href="#!" class="hide-on-med-and-down modal-close waves-effect waves-green boton">X</a></h6>
+      <h4 class="coolvetica center">Nuestros vendedores te orientan</h4>
+      <h6 class="light center">Impulsa tu negocio</h6>
+      <div class="row">
+            <div class="col s4 m4 l5"><hr></div>
+          
+            <div class="col s4 m4 l2 center">
+              <i class="pink-text fas fa-female fa-2x"></i>
+              <i class="blue-text text-darken-4 fas fa-male fa-2x"></i>
+            </div>
+
+            <div class="col s4 m4 l5"><hr></div>
+
+          </div>
+      
+      <div class="center"><img src="img/primer-plano-dos.jpg" style="width:100%;"></div>
+      
+      <hr>
+      <p class="" style="text-align:justify;">&nbsp;&nbsp;&nbsp;Independientemente de tu volumen de compra o tamaño de tu negocio, nuestra fuerza de ventas proporciona todos los canales para que puedan llegar a las puertas de tu negocio los productos <b>ABARROTES Y CONFITES NESTLÉ&copy;</b> que necesites.</p>
+      <p class="" style="text-align:justify;">&nbsp;&nbsp;&nbsp;Mientras la competencia solo concentra en vender grandes sumas a clientes ya establecidos, nuestro equipo de trabajo aborda cada tipo de emprendimiento, desde un carrito hasta un Supermercado, desde un kiosko hasta un almacen; <b>QUEREMOS QUE CREZCAS CON NOSOTROS</b> entendiendo tus fortalezas y debilidades, amenazas y oportunidades de crecer, a través de asesorías administrativas que te permitan evaluar las mejores condiciones y lograr tus objetivos.</p>
+    </div>
+    <div class="modal-footer" style="margin-bottom:10px;">
+      <a href="#!" class="boton modal-close waves-effect waves-green">Cerrar Ventana</a>
+    </div>
+  </div>
+
+  <!-- Modal Servicio al Cliente -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <h6 class="right"><a href="#!" class="hide-on-med-and-down modal-close waves-effect waves-green boton">X</a></h6>
+      <h4 class="coolvetica center">Servicio en Ejecución y Postventa</h4>
+      <h6 class="light center">Nos preocupamos por tu bienestar</h6>
+      <div class="row">
+            <div class="col s4 m4 l5"><hr></div>
+          
+            <div class="col s4 m4 l2 center">
+              <i class="blue-grey-text text-lighten-4 fas fa-hands-helping fa-2x"></i>
+              <i class="red-text fas fa-heart fa-2x"></i>
+            </div>
+
+            <div class="col s4 m4 l5"><hr></div>
+
+          </div>
+      
+      <div class="center"><img src="img/transporte2.jpg" style="width:100%;"></div>
+      
+      <hr>
+      <p style="text-align:justify;">&nbsp;&nbsp;&nbsp;Parte de nuestro servicio se basa en la satisfacción de nuestros clientes. Operamos bajo normas de Seguridad e Higiene Industrial parea asegurar que cada producto llegue en un estado idílico para la venta. Todos nuestros productos permanecen bajo la estricta supervisión de controles de calidad y bajo los medios indicados en el empaque. Para productos como chocolates, contamos con una nevera que los conserva de manera tal pueda ser despachado y puesto a la venta al instante.</p>
+
+      <p style="text-align:justify;">&nbsp;&nbsp;&nbsp;Nuestro Servicio al Cliente está a preparado para atender cualquier planteamiento, dudas e inquietudes que puedan surgir en el proceso de negociación, venta y entrega del pedido. Puedes comunicarte a nuestros teléfonos +56 (2) 2434 7273 - +56 (2) 2434 7272.</p>
+    </div>
+    <div class="modal-footer" style="margin-bottom:10px;">
+      <a href="#!" class="modal-close waves-effect waves-green boton">Cerrar Ventana</a>
+    </div>
+  </div>
+
+  <!-- Modal Atención comunas -->
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <h6 class="right"><a href="#!" class="hide-on-med-and-down modal-close waves-effect waves-green boton">X</a></h6>
+      <h4 class="coolvetica center">Sector Oriente de Santiago</h4>
+      <h6 class="light center">Cobertura de 14 comunas en la Región Metropolitana</h6>
+      <div class="row">
+        <div class="col s4 m4 l5"><hr></div>
+      
+        <div class="col s4 m4 l2 center">
+          <i class="red-text text-darken-3 fas fa-map-marker-alt fa-2x"></i>
+        </div>
+
+        <div class="col s4 m4 l5"><hr></div>
+        
+        <div class="col s12 m12 l12 center">
+          <img src="img/comunas (2).png" style="width:70%;">
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <hr>
+          <p style="text-align:justify;">&nbsp;&nbsp;&nbsp;COMECH te ofrece atención a lo largo y ancho de las comunas de <b>Conchalí, Huechuraba, La Florida, La Reina, Las Condes, Lo Barnechea, Macul, Ñuñoa, Peñalolén, Providencia, Recoleta, San Joaquín, San Miguel, Vitacura</b>. Nuestros vendedores se movilizarán hacia tu negocio, brindándote un servicio de calidad en cuanto a digitación de pedidos, estrategias de crecimiento de tu negocio y tips que puedes utilizar para acrecentar tus ventas.</p>
+        </div>
+      </div>
+ 
+    </div>
+    <div class="modal-footer" style="margin-bottom:10px;">
+
+      <a href="#!" class="modal-close waves-effect waves-green boton">Cerrar Ventana</a>
+    </div>
+  </div>
+
+  <!-- Modal Despacho Gratis -->
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <h6 class="right"><a href="#!" class="hide-on-med-and-down modal-close waves-effect waves-green boton">X</a></h6>
+      <h4 class="coolvetica center">Entrega directa en tu Negocio</h4>
+      <h6 class="light center">Servicio totalmente GRATIS</h6>
+      <div class="row">
+            <div class="col s4 m4 l5"><hr></div>
+          
+            <div class="col s4 m4 l2 center">
+              <i class="blue-grey-text fas fa-truck-moving fa-2x"></i>
+              <i class="teal-text text-darken-4 fas fa-store fa-2x"></i>
+            </div>
+
+            <div class="col s4 m4 l5"><hr></div>
+
+          </div>
+      
+      <div class="center"><img src="img/transporte.jpg" style="width:100%;"></div>
+      
+      <hr>
+      <p style="text-align:justify;">&nbsp;&nbsp;&nbsp;Una vez el pedido ha sido digitado, llegará entre 24 y 48 horas a la puerta de tu negocio. Contamos con una flota de las mejoras camionetas equipadas con neveras que preservan las condiciones en las que son trasladados los productos, asegurando que lleguen en las condiciones apropiadas para ser exhibidas y vendidas. <b>ESTE SERVICIO ES COMPLETAMENTE GRATIS</b> para tu mayor satisfacción nos encargamos que el pedido llegue sin cargos adicionales, <b>SIEMPRE TRABAJAMOS PARA TI</b>.</p>
+    </div>
+    <div class="modal-footer" style="margin-bottom:10px;">
+      <a href="#!" class="modal-close waves-effect waves-green boton">Cerrar Ventana</a>
+    </div>
+  </div>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <!--<script src="js/scrollspy.js"></script>-->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+
+  <script>
+  AOS.init();
+  </script>
+
+  <script>
+  $(document).ready(function(){
+    $('.parallax').parallax();
+    $('.scrollspy').scrollSpy();
+    $('.sidenav').sidenav();
+    $('.tooltipped').tooltip({
+      outDuration: 50
+    });
+    $('.carousel').carousel({
+      indicators: true,
+    });
+    $('.carousel.carousel-slider').carousel({
+      indicators: true,
+      fullWidth: true
+    });
+    $('.slider').carousel();
+    $('.modal').modal();
+    $('.dropdown-trigger').dropdown({
+      coverTrigger: false,
+    });
+    $('.autoplay').slick({
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1000,
+    });
+    $('.autoplay2').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1
+    });
+    
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.scrollspy');
+    var instances = M.ScrollSpy.init(elems, {
+      scrollOffset: 1,
+      throttle:2500
+    });
+  });
+ 
+  if ($('#back-to-top').length) {
+  var scrollTrigger = 100, // px
+    backToTop = function() {
+      var scrollTop = $(window).scrollTop();
+      if (scrollTop > scrollTrigger) {
+        $('#back-to-top').removeClass('scale-out');
+      } else {
+        $('#back-to-top').addClass('scale-out');
+      }
+    };
+  backToTop();
+  $(window).on('scroll', function() {
+    backToTop();
+  });
+  
+  $('#back-to-top').on('click', function(e) {
+    e.preventDefault();
+    $('html,body').animate({
+      scrollTop: 0
+    }, 700);
+  });
+}
+
+$('.autoplay').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1000
+    });
+
+       </script>
+
+  </body>
+</html>
